@@ -1,0 +1,13 @@
+---
+- name: to demo pause module
+  hosts: all
+  vars:
+          wait_seconds: 10
+  tasks:
+          - name: pause for {{ wait_seconds | int }} second # used int as a filter bcz its a integer value
+            pause:
+                    seconds: "{{ wait_seconds | int }}"
+
+          - name: message 
+            debug:
+                    msg: "END"

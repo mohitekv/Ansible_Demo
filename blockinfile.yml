@@ -1,0 +1,10 @@
+---
+- name: demo blockinfile
+  hosts: all
+  tasks:
+          - name: demo blockinfile
+            blockinfile:
+                    state: present
+                    dest: /etc/ansible/hosts
+                    content:
+                            172.31.91.20
