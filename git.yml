@@ -1,0 +1,12 @@
+---
+- name: git demo
+  hosts: all
+  tasks:
+          - name: install git package
+            apt:
+                    name: git
+                    state: present
+          - name: checkout git repo
+            git:
+                    repo: https://github.com/mohitekv/ShellBasic.git
+                    dest: /root/git

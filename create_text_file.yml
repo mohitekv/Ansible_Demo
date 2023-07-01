@@ -1,0 +1,14 @@
+---
+- name: to create a text file
+  hosts : all
+  vars:
+          source: "/root/sample.txt"
+  tasks:
+          - name: to create a text file
+            copy:
+                    dest: "{{ source }}"
+                    content:
+                            hello
+                            how
+                            r 
+                            u

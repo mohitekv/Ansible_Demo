@@ -1,0 +1,11 @@
+---
+- name: copy demo
+  hosts: all
+  become: false
+  tasks:
+          - name: copy of file
+            copy:
+                    src: /root/ansible/git.yml
+                    dest: /root/git
+                    mode: '0644'
+

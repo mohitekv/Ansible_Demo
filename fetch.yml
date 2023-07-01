@@ -1,0 +1,12 @@
+---
+- name: fetch module
+  become: false
+  hosts: all
+  vars:
+          log_file: "/var/log/ubuntu-advantage-timer.log"
+          dest_file: "/root/git/"
+  tasks:
+          - name: fetch
+            fetch:
+                    src: "{{ log_file }}"
+                    dest: "{{ dest_file }}"

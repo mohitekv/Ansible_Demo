@@ -1,0 +1,21 @@
+---
+- name: check if file exists
+  hosts: all
+  vars:
+          file: "/root/sample.txt"
+  tasks:
+          - name: check if file exists
+            stat:
+                    path: "{{ file }}"
+            register: file_data
+
+          - name: report if file exists
+            debug:
+                    msg: "the file  {{ file }} exists"
+            when: file_data.stat.exists
+
+          - name: report if not exists
+            debug:
+                    msg: "the file {{ file }} is missing" 
+            when: not file_data.stat.exists 
+                    

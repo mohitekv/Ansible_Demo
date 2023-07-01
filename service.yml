@@ -1,0 +1,9 @@
+---
+- name: service module
+  hosts: all
+  tasks:
+          - name: to restart sshd service
+            service:
+                    name: ssh
+                    state: restarted
+                    enabled: false
